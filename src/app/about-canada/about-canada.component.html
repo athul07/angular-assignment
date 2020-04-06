@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<div class="list" *ngFor="let item of itemList">
+    <div class="item">
+        <h3>{{item.title}}</h3>
+        <p><img [attr.src]="item.imageHref" onerror="" alt="">{{item.description}} </p>
+    </div>
+</div>
