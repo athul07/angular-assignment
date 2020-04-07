@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import $ from 'jquery';
 import { CanadaService } from '../services/canada.service';
 
 @Component({
@@ -22,6 +21,7 @@ export class AboutCanadaComponent implements OnInit {
       console.log(data);
     });
   }
+
   refresh() {
     this.ngOnInit();
   }
