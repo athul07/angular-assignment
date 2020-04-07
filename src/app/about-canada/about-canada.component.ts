@@ -22,5 +22,7 @@ export class AboutCanadaComponent implements OnInit {
       console.log(data);
     });
   }
-
+  refresh() {
+    this.ngOnInit();
+  }
 }
