@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import $ from 'jquery';
 import { CanadaService } from '../services/canada.service';
 
 @Component({
