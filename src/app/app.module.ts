@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutCanadaComponent } from './about-canada/about-canada.component';
-import { HttpClientModule } from '@angular/common/http';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { CanadaService } from '../app/services/canada.service';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,10 +16,10 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CanadaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
