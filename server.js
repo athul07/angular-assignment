@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 
-app.use(express.static(__dirname + '/dist'));
-app.listen(process.env.PORT || 5000);
+app.use(express.static('./dist/assignment-angular'));
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
-})
-
-console.log("Console listening!")
+    res.sendFile('index.html', {
+        root: 'dist/assignment-angular'
+    });
+});
+app.listen(process.env.PORT || 8080);
