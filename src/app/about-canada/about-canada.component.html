@@ -1,12 +1,21 @@
 <div class="main-body">
-    <div class="heading">
-        <h1>{{title}}</h1>
-        <button (click)="refresh()" class="refresh"><i class="fa fa-refresh"></i></button>
-    </div>
-    <div class="list" *ngFor="let item of itemList">
-        <div class="item" *ngIf="item.title || item.description || item.imageHref">
-            <h3>{{item.title}}</h3>
-            <p><img [lazyLoad]="item.imageHref" onerror="" alt="">{{item.description}} </p>
+    <div class="content" *ngIf="!loader">
+        <div class="heading">
+            <h1>{{title}}</h1>
+            <button (click)="refresh()" class="refresh"><i class="fa fa-refresh"></i></button>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 list" *ngFor="let item of itemList">
+                    <div class=" item" *ngIf="item.title || item.description || item.imageHref">
+                        <h3>{{item.title}}</h3>
+                        <p><img [lazyLoad]="item.imageHref" onerror="" alt="">{{item.description}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="loader">
+        <div class="loading"></div>
     </div>
 </div>

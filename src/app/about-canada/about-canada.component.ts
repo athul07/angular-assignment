@@ -10,15 +10,17 @@ export class AboutCanadaComponent implements OnInit {
   canadaData: object;
   title: string;
   itemList: any;
+  loader: boolean = true;
 
   constructor(private canadaService: CanadaService) { }
 
   ngOnInit(): void {
+    this.loader = true;
     this.canadaService.getList().subscribe((data: any) => {
       this.canadaData = data;
       this.title = data.title;
       this.itemList = data.rows;
-      console.log(data);
+      this.loader = false;
     });
   }
 

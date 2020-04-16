@@ -1,3 +1,6 @@
+.main-body{
+    width: 100%;
+}
 .heading{
     h1{
         padding: 7px 25px;
@@ -6,7 +9,7 @@
         cursor: pointer;
         position: absolute;
         font-size: x-large;
-        top: 9%;
+        top: 3%;
         right: 4%;
         color: blue;
         float: right;
@@ -42,4 +45,32 @@
     border-bottom: 1px #e8ebf2;
     border-radius: 6px;
 }
+.loading {
+    height: 0;
+    width: 0;
+    padding: 15px;
+    border: 6px solid #ccc;
+    border-right-color: #888;
+    border-radius: 22px;
+    animation: rotate;
+    -webkit-animation: rotate 1s infinite linear;
+    /* left, top and position just for the demo! */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+@keyframes rotate {
+    /* 100% keyframe for  clockwise. 
+       use 0% instead for anticlockwise */
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
 
+@-webkit-keyframes rotate {
+    /* 100% keyframe for  clockwise. 
+       use 0% instead for anticlockwise */
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
